@@ -1,24 +1,13 @@
 //
-//  main.cpp
+//  Sorting.h
 //  Algorithm Practice
 //
 //  Created by 한동훈 on 02/07/2019.
 //  Copyright © 2019 한동훈. All rights reserved.
 //
-void swap(int &a, int &b);
-void printarray(int a[], int n);
-void Bubble(int a[],int n);
-void Counting(int a[],int size, int range);
 
-#include <iostream>
-using namespace std;
-int main(int argc, const char * argv[]) {
-    int a[10]={10,9,8,7,6,5,4,3,2,1};
-    Bubble(a,10);
-    
-    Counting(a,10,11);
-    return 0;
-}
+#ifndef Sorting_h
+#define Sorting_h
 
 void swap(int &a, int &b){
     int temp=a;
@@ -41,7 +30,7 @@ void Bubble(int a[],int n){
 }
 
 void Merge(int a[], int n){
-//   Sort with recursive method
+    //   Sort with recursive method
     
 }
 
@@ -58,3 +47,5 @@ void Counting(int a[],int size, int range){
     printarray(countarr, range);
     delete[] countarr ;
 }
+
+#endif /* Sorting_h */
