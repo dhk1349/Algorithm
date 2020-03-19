@@ -15,18 +15,15 @@ Possible errors:
 import random
 import sys
 
-print("==Type Two Integers!==",end="")
+print("==Type Two Integers!==")
 error=""
+
 try:
     n=int(input("Type n:"))
     m=int(input("Type m:"))
-    """
-    if (type(n)!=int or type(m)!=int):
-        error+="M or N should be integer format"
-        raise Exception(error)
-    """
+
     if (n<m):
-        error+="Error: N must be same or bigger than M.\n"
+        error+="Error: N must be bigger than M.\n"
     if (n<0 or m<0):
         error+="Error: Both M and N should not be negative number.\n"
     if(n<3):
@@ -40,23 +37,29 @@ except ValueError:
 except Exception as e:
     print(e)
     sys.exit()
-    
-container=[None]*n
+
+if(m==0):
+    print("M=0\nExiting Program...\n")
+    sys.exit()
+
+S=[None]*n
 for i in range(n):
-    container[i]=random.randint(1,10)
+    S[i]=random.randint(1,10)
 
 tmax=-1
-tmin=sum(container)
+tmin=sum(S)
 
 for i in range(n-m+1):
     tmp=0
     for j in range(m):
-        tmp+=container[i+j]
+        tmp+=S[i+j]
     if(tmp>tmax):
         tmax=tmp
     if(tmp<tmin):
         tmin=tmp
 
-print(container)
+print(S)
 print("tmax: ", tmax)
 print("tmin: ", tmin)
+
+x=input("Type any key to finish the program...")
