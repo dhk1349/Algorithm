@@ -9,9 +9,6 @@ import random
 n=7
 A=[3,1,6,2,4,9,5]
 
-box=[]
-for i in range(1000):
-   box.append(random.randrange(1,1000)) 
 
 def alg1(n, A):
     stime=time.time()
@@ -23,8 +20,8 @@ def alg1(n, A):
                 maxnum=A[j]
         M[i]=maxnum
     etime=time.time()
-    print (M)
-    print("Operating time: ", etime-stime)
+    print ("size: ",len(M))
+    print("alg1 Operating time: ", etime-stime)
     return
 
 def alg2(n,A):
@@ -36,8 +33,19 @@ def alg2(n,A):
         maxnum=max(maxnum, A[i])
         M[i]=maxnum
     etime=time.time()
-    print (M)
-    print("Operating time: ", etime-stime)
+    print ("size: ",len(M))
+    print("alg2 Operating time: ", etime-stime,"\n")
     return
-alg1(1000,box)
-alg2(1000,box)
+
+
+for i in range(2):
+    if i==0:
+        size=1000
+    else:
+        size=10000
+    for j in range(5):
+        box=[]
+        for i in range(size*(j+1)):
+            box.append(random.randrange(1,100))
+        alg1(size*(j+1),box)
+        alg2(size*(j+1),box)
