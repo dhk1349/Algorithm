@@ -13,14 +13,16 @@ A=[3,1,6,2,4,9,5]
 def alg1(n, A):
     stime=time.time()
     M=[None]*n
-    for i in range(n):
-        maxnum=-1
-        for j in range(i+1):
-            if (maxnum<A[j]):
+    M[0]=A[0]
+    for i in range(1,n):
+        maxnum=A[0]
+        for j in range(1,i+1):
+            if (maxnum<A[j]):   
                 maxnum=A[j]
         M[i]=maxnum
     etime=time.time()
     print ("size: ",len(M))
+    print("# of basic operation: ", int((n*n-n)/2))
     print("alg1 Operating time: ", etime-stime)
     return
 
@@ -34,8 +36,13 @@ def alg2(n,A):
         M[i]=maxnum
     etime=time.time()
     print ("size: ",len(M))
+    print("# of basic operation: ", n-1)
     print("alg2 Operating time: ", etime-stime,"\n")
     return
+
+
+#alg1(n,A)
+#alg2(n,A)
 
 
 for i in range(2):
