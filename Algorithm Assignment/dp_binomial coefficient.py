@@ -3,6 +3,7 @@
 Created on Wed Apr  8 16:52:46 2020
 
 @author: dhk13
+
 """
 
 def bin(n,k):
