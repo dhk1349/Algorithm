@@ -37,7 +37,22 @@ for diagonal in range(m+n-2,-1,-1):
             panelty=0
         else:
             panelty=1
-        table[diagonal-j][j]=min(table[diagonal-j+1][j+1]+panelty, min(table[diagonal-j+1][j]+2,table[diagonal-j][j+1]+2))
+        #table[diagonal-j][j]=min(table[diagonal-j+1][j+1]+panelty, min(table[diagonal-j+1][j]+2,table[diagonal-j][j+1]+2))
+        if(table[diagonal-j+1][j]+2>table[diagonal-j][j+1]+2):
+            if(table[diagonal-j][j+1]+2>table[diagonal-j+1][j+1]+panelty):
+                #대각이 선행 원소
+                table[diagonal-j][j]=table[diagonal-j+1][j+1]+panelty
+                minindex[diagonal-j][j]=(diagonal-j+1,j+1)
+            else:
+                table[diagonal-j][j]=table[diagonal-j][j+1]+2
+                minindex[diagonal-j][j]=(diagonal-j,j+1)
+        else:
+            if(table[diagonal-j+1][j]+2>table[diagonal-j+1][j+1]+panelty):
+                table[diagonal-j][j]=table[diagonal-j+1][j+1]+panelty
+                minindex[diagonal-j][j]=(diagonal-j+1,j+1)
+            else:
+                table[diagonal-j][j]=table[diagonal-j+1][j]+2
+                minindex[diagonal-j][j]=(diagonal-j+1,j)
     #print()
         
 
@@ -45,8 +60,8 @@ for diagonal in range(m+n-2,-1,-1):
 
 printMatrix(table)
 
-_printMatrix(minindex)
-"""
+5#_printMatrix(minindex)
+
 x=0
 y=0
 
@@ -60,4 +75,3 @@ while (x <m and y <n):
         print(" - ", " ", b[ty])
     else:
         print(a[tx], " " , " -")
-"""
