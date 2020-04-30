@@ -16,8 +16,13 @@ def _printMatrix(matrix):
             print(matrix[i][j], end=" ")
         print()
 
-a=['A','A','C','A','G','T','T','A','C','C']
-b=['T','A','A','G','G','T','C','A']
+#a=['A','A','C','A','G','T','T','A','C','C']
+#b=['T','A','A','G','G','T','C','A']
+        
+#데이터1
+a=['T', 'G', 'A', 'C', 'A', 'A', 'G', 'T']
+#데이터2
+b=['T', 'A', 'C', 'A', 'A', 'T','T']
 
 m=len(a)
 n=len(b)
@@ -60,7 +65,7 @@ for diagonal in range(m+n-2,-1,-1):
 
 printMatrix(table)
 
-5#_printMatrix(minindex)
+#_printMatrix(minindex)
 
 x=0
 y=0
