@@ -1,27 +1,33 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon May  4 16:05:14 2020
+Created on Wed May  6 13:43:41 2020
 
 @author: dhk13
-
-Order edges in descending order.
-
-Add edge to minimum spanning tree if selected egde does not make cycle.
 """
-parent = dict()
-rank = dict()
+class Container:
+    def __init__(self):
+        self.SetCont=[]
 
-def make_singleton_set(v):
-    #시작 원소를 만드는 지정해서 v에 넣으면 된다. 
-    parent[v] = v
-    rank[v] = 1
-
-def find(v):
-    #Recursive function parent[v]=v일 때 까지 올라감. 
-    #즉, root를 리. 
-    if parent[v] != v:
-        parent[v] = find(parent[v])
-    return parent[v]
+class SetType:
+    def __init__(self):
+        self.Nodes=[]
+        self.EdgeContainter=[]
+        
+    def find(Edge):
+        cnt=0
+        for i in range(1,len(Egde)+1):
+            if i in self.Nodes:
+                cnt+=1
+        return cnt        
+        
+    def eq(otherSet):
+        for i in otherSet.Nodes:
+            if i in self.Nodes:
+                return 0
+        return 1
+    
+    def union(self):
+        
 
 def kruskal(graph):
     #initializing parent and rank.
