@@ -9,6 +9,7 @@ def kp(i, profit, weight):
         global bestset
         global maxp
         
+        #최댓 값 갱신 
         if( weight <= W and profit >maxp):
             maxp = profit
             bestset = include[:]
