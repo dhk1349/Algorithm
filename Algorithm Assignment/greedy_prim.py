@@ -34,6 +34,7 @@ def prim(n, W, F):
     for i in range(1,n):
         mindist=inf
         for j in range(1, n):
+            #distance 에서 가장 작은 값을 찾기 
             if(0<=distance[j] and distance[j]<mindist):
                 mindist=distance[j]
                 vnear=j
