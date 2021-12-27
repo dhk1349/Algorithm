@@ -20,9 +20,9 @@ def _printMatrix(matrix):
 #b=['T','A','A','G','G','T','C','A']
         
 #데이터1
-a=['T', 'G', 'A', 'C', 'A', 'A', 'G', 'T']
+a=['A', 'G', 'G', 'T', 'A']
 #데이터2
-b=['T', 'A', 'C', 'A', 'A', 'T','T']
+b=['A', 'T', 'G', 'C', 'A']
 
 m=len(a)
 n=len(b)
